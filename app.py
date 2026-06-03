@@ -1,18 +1,9 @@
 import streamlit as st
-import random
 
 st.set_page_config(page_title="PlaceRAG - Amity", page_icon="🎓", layout="wide")
 
 st.title("🎓 PlaceRAG - Ultimate Amity Placement Suite")
 st.caption("Advanced AI-powered RAG & Industry Integration Ecosystem for Amity University MP students")
-
-# --- PREMIUM STYLING FOR MODERN HUB ---
-st.markdown("""
-    <style>
-    .metric-card { background-color: #F8FAFC; border-radius: 10px; padding: 15px; border-left: 5px solid #3B82F6; margin: 10px 0; }
-    .alert-card { background-color: #FEF2F2; border-radius: 10px; padding: 15px; border-left: 5px solid #EF4444; }
-    </style>
-""", unsafe_allowed_html=True)
 
 # --- EXPANDED EXTENDED TABS ---
 tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
@@ -46,23 +37,14 @@ companies = {
 # --- UNLIMITED AI KNOWLEDGE BASE ARCHITECTURE ---
 knowledge_base = {
     "interview": "🎯 **Technical Interview Question Repository:**\n1. Explain Memory Management in Operating Systems.\n2. How do you implement a REST API using FastAPIs/Node.js?\n3. What is the difference between Clustered and Non-Clustered Indexes in SQL?\n4. Explain Object-Oriented Principles with real-world examples.\n5. Design an URL Shortener system scheme (System Design snippet).",
-    
     "resume": "📝 **Next-Gen Market ATS Resume Architect:**\n• Keep layout strictly single-column (Multi-column resumes fail modern ATS processors).\n• Use Action Verbs: Engineered, Implemented, Automated, Orchestrated.\n• Add specialized API or ML tracking elements to project domains.\n• Include live clickable hyperlinks for GitHub repositories and hosted portfolio links.",
-    
     "aptitude": "🧮 **Aptitude Crack Framework:**\n• Quantitative: Focus on Allegation & Mixture, Permutations, Probability, Work & Time.\n• Logical Reasoning: Cryptarithmetic (Highly asked in TCS/Infosys), Data Sufficiency, Syllogisms.\n• Recommended Sites: PrepInsta Prime, IndiaBIX, GeeksforGeeks Mock Tests.",
-    
     "salary": "💰 **Industry Standard Placement Pay Matrix (Current Market):**\n• Service-Mass Recruiter Track: 3.5 to 5.5 LPA.\n• Differential Hiring Core Track: 6.5 to 9.5 LPA.\n• Premium Product Tier Track: 12.0 to 45.0+ LPA.\n• Negotiation Strategy: Do not specify a hard number. Phrase as: 'I am open to competitive industry standard packages aligned with the technical responsibilities of this role.'",
-    
     "hr": "👔 **HR Executive Screening Question Repository & Answers:**\n• *Why do you want to join us?* -> Connect your specialized skills directly with the company's recent tech expansions (e.g., 'I observed your shift towards generative AI structures...').\n• *Tell me about a conflict or failure.* -> Use the **STAR Method** (Situation, Task, Action, Result) showcasing a positive outcome.\n• *Are you comfortable with bonds or relocation?* -> Always reply affirmatively to proceed to the offer compilation phase.",
-    
     "offcampus": "🌐 **Off-Campus Aggressive Acquisition Strategy:**\n• **LinkedIn Direct Outreaching:** Search for 'Engineering Managers' or 'Tech Leads' instead of general HRs. Drop a 3-sentence clean project pitch with a Resume link.\n• **Job Boards:** Use Wellfound (AngelList) for AI/ML and startup roles, and Instahyre for direct AI matching algorithms.\n• **Hackathons:** Participate in Unstop and HackerEarth challenges. Direct shortcuts to interview slots!",
-    
     "cgpa": "📊 **CGPA Matrix Analysis:**\n• 8.5+ CGPA: Complete immunity. Eligible for high-end product tech filters.\n• 7.0 - 8.5 CGPA: Standard sweet spot. Eligible for 90% of on-campus drives.\n• Below 6.5: Shield yourself with exceptional open-source contributions or active full-stack freelance code profiles.",
-    
     "api": "💡 **Modern API Architectures & Industry Trends:**\n• Modern applications rely on asynchronous communication frameworks (FastAPI, GraphQL, Node.js).\n• Key focus parameters: JSON request-response headers, Middleware authentication (OAuth2/JWT), CORS handling, and Containerization (Docker) for API setups.",
-    
     "internship": "🚀 **Internship High-Conversion Framework:**\n• Target 6-month off-campus stints during your pre-final semesters.\n• Look for PPO (Pre-Placement Offer) metrics of startups on platforms like TopHire or Wellfound.\n• Ensure your Github repository shows daily automated commits (Green Dots graph) to impress remote recruiters.",
-    
     "backlog": "⚠️ **Backlog Mitigation Architecture:**\n• If you have active backlogs, prioritize mass recruiters that offer relaxation protocols or apply to agile startups off-campus that bypass grade verifications entirely."
 }
 
@@ -84,7 +66,6 @@ def get_advanced_answer(query):
         if any(k in query for k in keys):
             return knowledge_base[topic]
             
-    # Substring search for precise company lookup
     for comp in companies:
         if comp.split(" ")[0].lower() in query:
             c = companies[comp]
@@ -130,23 +111,15 @@ with tab2:
 
     st.markdown("---")
     
-    # Advanced Offline Market Realities
-    st.markdown("### 🌐 Market Placement Scale Reality Matrix (Offline vs Online)")
     if backlogs == "Yes, I have Active Backlogs":
-        st.markdown("""
-        <div class='alert-card'>
-        <strong>⚠️ CRITICAL STRATEGY ACTION REQUIRED:</strong><br>
-        Most on-campus institutional recruitment systems automatedly drop applicants with active backlogs. 
-        <strong>Your Optimized Hack:</strong> Target early-stage startups on Y-Combinator Startup Directory or Wellfound where recruiters filter via code quality over university parameters.
-        </div>
-        """, unsafe_allowed_html=True)
+        st.error("⚠️ CRITICAL STRATEGY ACTION REQUIRED: Most on-campus institutional recruitment systems automatedly drop applicants with active backlogs. Target early-stage startups on Y-Combinator Startup Directory or Wellfound where recruiters filter via code quality over university parameters.")
     
     if cgpa_val >= 8.5:
-        st.markdown("<div class='metric-card'>🌟 <strong>Product Engineer Scale:</strong> Expected Package 10 - 45 LPA off-campus. Focus on LeetCode Medium/Hard segments, Distributed Database Schemes, and Cloud Deployment Architectures.</div>", unsafe_allowed_html=True)
+        st.success("🌟 Product Engineer Scale: Expected Package 10 - 45 LPA off-campus. Focus on LeetCode Medium/Hard segments, Distributed Database Schemes, and Cloud Deployment Architectures.")
     elif cgpa_val >= 7.0:
-        st.markdown("<div class='metric-card'>⚡ <strong>Differential Tech Scale:</strong> Expected Package 5 - 10 LPA. Highly safe zone for all premium service and product development firms. Maintain project hosting environments.</div>", unsafe_allowed_html=True)
+        st.info("⚡ Differential Tech Scale: Expected Package 5 - 10 LPA. Highly safe zone for all premium service and product development firms. Maintain project hosting environments.")
     else:
-        st.markdown("<div class='metric-card'>📈 <strong>Agile Developer Scale:</strong> Expected Package 3.5 - 6 LPA. Bypass traditional portal systems entirely using Direct Cold Emails and GitHub open-source showcase files.</div>", unsafe_allowed_html=True)
+        st.warning("📈 Agile Developer Scale: Expected Package 3.5 - 6 LPA. Bypass traditional portal systems entirely using Direct Cold Emails and GitHub open-source showcase files.")
 
     st.write(f"### Eligible Campus Corporate Entities for CGPA {cgpa_val}:")
     eligible_comps = [(name, data) for name, data in companies.items() if cgpa_val >= data["cgpa"]]
@@ -175,7 +148,7 @@ with tab3:
         "Business Analyst & Data Consultant"
     ])
     
-    st.info(f"📍 Curating System Design & Tech Track for **{modern_role}** optimized for **{target_comp}** standards.")
+    st.info(f"📍 Curating System Design & Tech Track for {modern_role} optimized for {target_comp} standards.")
     
     if modern_role == "AI / ML & Prompt Engineer":
         st.markdown("""
@@ -223,7 +196,6 @@ with tab4:
     if curr_sem == "Sem 5-6 (Aggressive Applying)":
         st.success("🎯 **CRITICAL APPLICABILITY WINDOW:** This is the ideal phase to lock a stipend-backed (15k - 45k/month) role. Apply directly on startups using Wellfound and Instahyre.")
     
-    # Modern Feature Integration
     st.markdown("### 🛠️ Emerging Market Internship Aggregators (Compared with Market Standards)")
     st.markdown("""
     - **Unstop Tier Competitions:** Don't just apply via traditional listings; join corporate hiring hackathons (e.g., Tata Crux, Amazon Wow). They grant direct bypass keys to interviews.
@@ -243,7 +215,6 @@ with tab5:
     if res_file is not None:
         st.success(f"Parsing Metadata Stream from: {res_file.name}")
         
-        # Real-time Simulation Engine output
         col_m1, col_m2, col_m3 = st.columns(3)
         col_m1.metric("Automated ATS Score Match", "78 / 100", "+4% vs Campus Average")
         col_m2.metric("Keyword Core Density", "62%", "Missing Context Elements")
@@ -256,4 +227,18 @@ with tab5:
             - ✅ **Social Profiles Checked:** Active GitHub links detected and verified by scanner stream.
             """)
 
-# ====================
+# ==========================================
+# TAB 6: AI LIVE MOCK TEST & HR SIMULATOR
+# ==========================================
+with tab6:
+    st.subheader("🎯 Real-Time Interview & Mock Script Simulator")
+    st.write("Simulate instant technical/HR evaluations or run a dynamic mock-test framework right away.")
+    
+    test_domain = st.selectbox("Select Test Subject Evaluation:", ["General HR Interview Script", "Core Python & API Coding Round", "DBMS & SQL Query Optimization"])
+    
+    if st.button("Generate Live Simulated Mock Questions"):
+        st.markdown("### 📝 Dynamic Evaluation Round Paper:")
+        
+        if test_domain == "General HR Interview Script":
+            st.info("1. The STAR Competency Check: Tell me about a time you handled a technical failure in a team project. What was your recovery model?\n2. Company Vector Question: Why do you think your skillset matches our company culture over service sector giants?\n3. The Weakness Trap: What is one real technical weakness you possess, and what steps did you perform last month to correct it?")
+        elif test_domain
