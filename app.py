@@ -72,8 +72,7 @@ def get_advanced_answer(query):
             return f"🏢 **Entity:** {comp}\n📦 **Package Range:** {c['package']}\n📊 **Min CGPA Criteria:** {c['cgpa']}\n🛠️ **Core Competencies:** {', '.join(c['skills'])}\n🔄 **Hiring Process Layout:** {c['rounds']}\n🏷️ **Category Class:** {c['type']}"
             
     return "💡 **PlaceRAG Expanded Intelligence Core:** I can guide you through Detailed Interviews, HR Questions, Live ATS Feedback, Modern API Paradigms, Off-Campus Referrals, Internships, and Backlog Strategies. Please ask any relevant question!"
-
-# ==========================================
+    # ==========================================
 # TAB 1: HYPER-EXPANDED RAG BOT
 # ==========================================
 with tab1:
@@ -241,4 +240,38 @@ with tab6:
         
         if test_domain == "General HR Interview Script":
             st.info("1. The STAR Competency Check: Tell me about a time you handled a technical failure in a team project. What was your recovery model?\n2. Company Vector Question: Why do you think your skillset matches our company culture over service sector giants?\n3. The Weakness Trap: What is one real technical weakness you possess, and what steps did you perform last month to correct it?")
-        elif test_domain
+        elif test_domain == "Core Python & API Coding Round":
+            st.code("""
+# Challenge: Write a quick function to parse an incoming JSON dictionary stream, 
+# extract any user items containing 'active_backlog=False' and 'cgpa>=7.0', 
+# and sort them based on package values in descending format.
+
+def process_placement_stream(json_data):
+    # Complete your code challenge here for submission evaluation
+    pass
+            """, language="python")
+        elif test_domain == "DBMS & SQL Query Optimization":
+            st.code("""
+-- Challenge: Write an optimized SQL Query utilizing Window Functions 
+-- to rank students in each Engineering Branch based on their total Marks, 
+-- ensuring ties are handled without skipping consecutive rank numbers.
+
+SELECT student_id, branch, marks,
+DENSE_RANK() OVER (PARTITION BY branch ORDER BY marks DESC) as ranking
+FROM AmityStudentDatabase;
+            """, language="sql")
+
+# --- SIDEBAR ---
+st.sidebar.title("📚 PlaceRAG Topics")
+st.sidebar.write("💬 Chat with AI\n🏢 Company Filter\n📋 Skill Roadmap\n📝 Internship Guide\n📄 AI ATS Evaluator\n🎯 Mock Simulator")
+st.sidebar.markdown("---")
+
+st.sidebar.markdown("### 🌐 Next-Gen Market Platform Shunt-Links")
+st.sidebar.markdown("""
+- 🔐 [Amizone Official Portal](https://www.amizone.net/)
+- 💻 [LeetCode Company-Tagged Pack](https://leetcode.com/)
+- 🚀 [Wellfound Startup Jobs Directory](https://wellfound.com/)
+- 💼 [Instahyre AI Matching Engine](https://www.instahyre.com/)
+""")
+
+st.sidebar.success("Built for Amity University MP students!")
